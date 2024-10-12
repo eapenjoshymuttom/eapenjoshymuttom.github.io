@@ -3,133 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muttom Oil Enterprise</title>
+    <title>Muttom Oil Mills</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        /* Reset and base styles */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            min-height: 100vh;
+            background-color: #f9fafb;
+        }
+
+        /* Utility classes */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header styles */
         header {
-            background-color: #35424a;
-            color: #ffffff;
-            padding-top: 30px;
-            min-height: 70px;
-            border-bottom: #e8491d 3px solid;
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
-        header a {
-            color: #ffffff;
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #166534;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav a {
+            color: #4b5563;
             text-decoration: none;
-            text-transform: uppercase;
-            font-size: 16px;
+            padding: 0.5rem 1rem;
         }
-        header li {
-            float: left;
-            display: inline;
-            padding: 0 20px 0 20px;
+
+        nav a:hover {
+            color: #166534;
         }
-        header #branding {
-            float: left;
+
+        /* Hero section */
+        .hero {
+            background: linear-gradient(to bottom, #166534, #15803d);
+            color: white;
+            padding: 5rem 0;
         }
-        header #branding h1 {
-            margin: 0;
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
-        header nav {
-            float: right;
-            margin-top: 10px;
+
+        .hero-text {
+            flex: 1;
         }
-        header .highlight, header .current a {
-            color: #e8491d;
-            font-weight: bold;
+
+        .hero-image {
+            flex: 1;
         }
-        header a:hover {
-            color: #cccccc;
-            font-weight: bold;
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
         }
-        #showcase {
-            min-height: 400px;
-            background: url('/api/placeholder/1200/400') no-repeat center;
-            background-size: cover;
+
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button-primary {
+            background-color: white;
+            color: #166534;
+        }
+
+        .button-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        /* Features section */
+        .features {
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
             text-align: center;
-            color: #ffffff;
         }
-        #showcase h1 {
-            margin-top: 100px;
-            font-size: 55px;
-            margin-bottom: 10px;
+
+        .feature-icon {
+            margin-bottom: 1rem;
+            color: #166534;
         }
-        #showcase p {
-            font-size: 20px;
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
         }
-        #boxes {
-            margin-top: 20px;
+
+        /* Additional sections */
+        .section {
+            padding: 4rem 0;
         }
-        #boxes .box {
-            float: left;
+
+        .section-title {
+            font-size: 2rem;
             text-align: center;
-            width: 30%;
-            padding: 10px;
+            margin-bottom: 2rem;
         }
-        #boxes .box img {
-            width: 90px;
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
         }
+
+        .product-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        /* Footer */
         footer {
-            padding: 20px;
-            margin-top: 20px;
-            color: #ffffff;
-            background-color: #e8491d;
+            background-color: #064e3b;
+            color: white;
+            padding: 2rem 0;
             text-align: center;
+        
         }
+        
     </style>
 </head>
 <body>
     <header>
         <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Muttom</span> Enterprise</h1>
+            <div class="header-content">
+                <h1 class="logo">Muttom Oil Mills</h1>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#tradition">Our Tradition</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
             </div>
-            <nav>
-                <ul>
-                    <li class="current"><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <section id="showcase">
+    <section class="hero">
         <div class="container">
-            <h1>Quality Oil Products</h1>
-            <p>Providing premium oil solutions for all your needs</p>
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Pure Tradition in Every Drop</h2>
+                    <p style="font-size: 1.25rem; margin-bottom: 2rem;">From our family to yours - 100% natural coconut oil</p>
+                    <div>
+                        <a href="#" class="button button-primary">Shop Now</a>
+                        <a href="#" class="button button-secondary" style="margin-left: 1rem;">Learn More</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <img src="muttom.jpg"Young child holding Muttom coconut oil bottle surrounded by coconuts">
+                    <style>
+                        img {
+                            width: 100%;
+                            height: auto;
+                            border-radius: 0.5rem;
+                        }
+</style>
+                    
+                </div>
+            </div>
         </div>
     </section>
 
-    <section id="boxes">
+    <section class="features">
         <div class="container">
-            <div class="box">
-                <img src="/api/placeholder/90/90" alt="Oil Drop">
-                <h3>Premium Quality</h3>
-                <p>Our oils meet the highest industry standards</p>
-            </div>
-            <div class="box">
-                <img src="/api/placeholder/90/90" alt="Eco Friendly">
-                <h3>Eco-Friendly</h3>
-                <p>Committed to sustainable practices</p>
-            </div>
-            <div class="box">
-                <img src="/api/placeholder/90/90" alt="Customer Service">
-                <h3>Expert Support</h3>
-                <p>Dedicated customer service team</p>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="feature-icon" data-lucide="heart"></i>
+                    <h3>Family Tradition</h3>
+                    <p>Passing down quality through generations</p>
+                </div>
+                <div class="feature-item">
+                    <i class="feature-icon" data-lucide="leaf"></i>
+                    <h3>100% Natural</h3>
+                    <p >Pure coconut oil with no additives</p>
+                </div>
+                <div class="feature-item">
+                    <i class="feature-icon" data-lucide="users"></i>
+                    <h3>Community First</h3>
+                    <p>Supporting local farmers and families</p>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Additional sections omitted for brevity -->
 
     <footer>
-        <p>Muttom Enterprise, Copyright &copy; 2024</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Muttom coconut Oil Mill</h3>
+                    <address>
+                        <br>
+                        Karimpanakulam, Manimala, Kerala 686544,<br>
+                        India
+                    </address>
+                    <p>Phone: +91 9846444667</p>
+                    <p>Email: muttomcoconutoil@gmail.com</p>
+                </div>
+               
+            </div>
+            <p class="copyright">&copy; 2024 Muttom Oil Mills. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
 </body>
 </html>
