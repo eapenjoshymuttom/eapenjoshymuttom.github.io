@@ -91,7 +91,11 @@
                     <p>At Muttom Oil Mills, we believe in more than just producing oil; we're preserving a legacy. Our close ties with local farmers and our dedication to sustainable practices have made us an integral part of the community. We take pride in supporting local livelihoods while delivering a product that brings the essence of Kerala to homes across India and beyond.</p>
                     <p>Today, as we continue to grow, our core values remain unchanged. Every bottle of Muttom coconut oil is a testament to our family's dedication to quality, purity, and tradition. We invite you to experience the difference that generations of expertise can make in every drop of our oil.</p>
                 </div>
-                <div class="map-container" id="map"></div>
+                <div class="map-container" id="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15741.672776727826!2d76.7713718!3d9.472306!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06377da9780c1d%3A0x18d4eccba270eeeb!2sMuttom%20Oil%20Mills!5e0!3m2!1sen!2sin!4v1728915332356!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    
+                </div>
+                
             </div>
         </div>
     </div>
@@ -108,21 +112,5 @@
         </div>
     </div>
 
-    
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDli7-1WRjUXMACkIg7H9ZFNakF1wiOORo&callback=initMap" async defer></script>
-    <script>
-        function initMap() {
-            const muttomLocation = { lat:9.47233915809257, lng:76.77142660012066 }; // Approximate coordinates for Manimala, Kerala
-            const map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 15,
-                center: muttomLocation
-            });
-            const marker = new google.maps.Marker({
-                position: muttomLocation,
-                map: map,
-                title: 'Muttom Oil Mills'
-            });
-        }
-    </script>
 </body>
 </html>
