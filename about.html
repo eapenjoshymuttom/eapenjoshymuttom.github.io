@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        .header-content {
+            background: #f4f4f4;
+            padding: 1rem;
+        }
+        .logo {
+            color: #166534;
+            text-decoration: none;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        nav {
+            float: right;
+        }
+        nav ul {
+            list-style-type: none;
+        }
+        nav li {
+            display: inline;
+            padding: 0 20px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+        }
+        .section {
+            padding: 2rem 0;
+        }
+        .about-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        .about-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+        .map-container {
+            flex: 1;
+            height: 400px;
+        }
+        .footer-content {
+            
+            background: #064e3b;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header-content">
+            <h1 id="muttom-oil-mills" class="logo">Muttom Oil Mills</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#tradition">Our Tradition</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="section about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Muttom Oil Mills</h2>
+                    <p>Nestled in the heart of Kerala, Muttom Oil Mills has been a cornerstone of quality coconut oil production for generations. Our journey began in the picturesque village of Karimpanakulam, where our family's passion for producing the purest coconut oil was born.</p>
+                    <p>For decades, we have upheld the tradition of cold-pressing coconuts to extract oil of the highest quality. Our commitment to natural processes ensures that every drop of Muttom coconut oil retains its authentic flavor, aroma, and nutritional benefits.</p>
+                    <p>At Muttom Oil Mills, we believe in more than just producing oil; we're preserving a legacy. Our close ties with local farmers and our dedication to sustainable practices have made us an integral part of the community. We take pride in supporting local livelihoods while delivering a product that brings the essence of Kerala to homes across India and beyond.</p>
+                    <p>Today, as we continue to grow, our core values remain unchanged. Every bottle of Muttom coconut oil is a testament to our family's dedication to quality, purity, and tradition. We invite you to experience the difference that generations of expertise can make in every drop of our oil.</p>
+                </div>
+                <div class="map-container" id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <h3>Muttom Coconut Oil Mill</h3>
+                <p>Karimpanakulam, Manimala, Kerala 686544, India</p>
+                <p>Phone: +91 9846444667</p>
+                <p>Email: muttomcoconutoil@gmail.com</p>
+            </div>
+            <p>&copy; 2024 Muttom Oil Mills. All rights reserved.</p>
+        </div>
+    </div>
+
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=!1m18!1m12!1m3!1d503167.5740352092!2d76.23294812656607!3d9.85064521519969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07cc024cb7c83f%3A0xc8944aaebb3ba492!2sSt.%20Joseph&#39;s%20College%20of%20Engineering%20and%20Technology%2C%20Palai!5e0!3m2!1sen!2sin!4v1617135156377!5m2!1sen!2sin"async defer></script>
+    <script>
+        function initMap() {
+            const muttomLocation = { lat:9.47233915809257, lng:76.77142660012066 }; // Approximate coordinates for Manimala, Kerala
+            const map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: muttomLocation
+            });
+            const marker = new google.maps.Marker({
+                position: muttomLocation,
+                map: map,
+                title: 'Muttom Oil Mills'
+            });
+        }
+    </script>
+</body>
+</html>
