@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="logo.png">
-    <title> Muttom Oil Mills</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/umd/lucide.min.js"></script>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title> Muttom Coconut Oil Mills</title>
+   
     <style>
-        /* Reset and base styles */
         * {
             margin: 0;
             padding: 0;
@@ -21,16 +19,16 @@
             color: #333;
             min-height: 100vh;
             background-color: #f9fafb;
+            position: relative;
+            z-index: 0;
         }
 
-        /* Utility classes */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
         }
 
-        /* Header styles */
         header {
             background-color: white;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
@@ -47,6 +45,13 @@
             font-size: 1.5rem;
             font-weight: bold;
             color: #166534;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo img {
+            height: 40px;
         }
 
         nav ul {
@@ -64,7 +69,6 @@
             color: #166534;
         }
 
-        /* Hero section */
         .hero {
             background: linear-gradient(to bottom, #166534, #15803d);
             color: white;
@@ -109,7 +113,6 @@
             color: white;
         }
 
-        /* Features section */
         .features {
             padding: 4rem 0;
         }
@@ -129,7 +132,6 @@
             color: #166534;
         }
 
-        /* Responsive design */
         @media (max-width: 768px) {
             .hero-content {
                 flex-direction: column;
@@ -144,7 +146,6 @@
             }
         }
 
-        /* Additional sections */
         .section {
             padding: 4rem 0;
         }
@@ -172,28 +173,28 @@
             padding: 1rem;
         }
 
-        /* Footer */
         footer {
             background-color: #064e3b;
             color: white;
             padding: 2rem 0;
             text-align: center;
-        
         }
-        
     </style>
 </head>
 <body>
     <header>
         <div class="container">
             <div class="header-content">
-                <h1 class="logo">Muttom Oil Mills</h1>
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Muttom Coconut Oil Mills Logo">
+                    <span>Muttom Coconut Oil Mills</span>
+                </a>
                 <nav>
                     <ul>
                         <li><a href="about.html">About</a></li>
-                        <li><a href="#products">Products</a></li>
-                        <li><a href="#tradition">Our Tradition</a></li>
-                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                     </ul>
                 </nav>
             </div>
@@ -207,20 +208,11 @@
                     <h2>Pure Tradition in Every Drop</h2>
                     <p style="font-size: 1.25rem; margin-bottom: 2rem;">From our family to yours - 100% natural coconut oil</p>
                     <div>
-                        <a href="#" class="button button-primary">Shop Now</a>
-                        <a href="#" class="button button-secondary" style="margin-left: 1rem;">Learn More</a>
+                        <a href="products.html" class="button button-primary">Shop Now</a>
                     </div>
                 </div>
                 <div class="hero-image">
-                    <img src="muttom.jpg"Young child holding Muttom coconut oil bottle surrounded by coconuts">
-                    <style>
-                        img {
-                            width: 100%;
-                            height: auto;
-                            border-radius: 0.5rem;
-                        }
-</style>
-                    
+                    <video autoplay loop muted src="video/rose ad.mp4" style="width: 100%; height: auto; border-radius: 0.5rem;"></video>
                 </div>
             </div>
         </div>
@@ -237,7 +229,7 @@
                 <div class="feature-item">
                     <i class="feature-icon" data-lucide="leaf"></i>
                     <h3>100% Natural</h3>
-                    <p >Pure coconut oil with no additives</p>
+                    <p>Pure coconut oil with no additives</p>
                 </div>
                 <div class="feature-item">
                     <i class="feature-icon" data-lucide="users"></i>
@@ -248,30 +240,21 @@
         </div>
     </section>
 
-    <!-- Additional sections omitted for brevity -->
-
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-info">
-                    <h3>Muttom Coconut Oil Mill</h3>
+                    <h3>Muttom Coconut Oil Mills</h3>
                     <address>
-                        <br>
                         Karimpanakulam, Manimala, Kerala 686544,<br>
                         India
                     </address>
                     <p>Phone: +91 9846444667</p>
                     <p>Email: muttomcoconutoil@gmail.com</p>
                 </div>
-               
             </div>
-            <p class="copyright">&copy; 2024 Muttom Oil Mills. All rights reserved.</p>
+            <p class="copyright">&copy; 2024 Muttom Coconut Oil Mills. All rights reserved.</p>
         </div>
-    </footer>
-
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
-    </script>
+    </footer>   
 </body>
 </html>
