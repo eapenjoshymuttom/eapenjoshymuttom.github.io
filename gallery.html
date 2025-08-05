@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link rel="icon" href="images/logo.png" type="image/png" />
+  <title>Gallery – Muttom Coconut Oil Mills</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.5;
+      color: #333;
+      min-height: 100vh;
+      position: relative;
+      z-index: 0;
+      background-color: #f9fafb;
+     
+    }
+
+    header {
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #166534;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .logo img {
+      height: 40px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav a {
+      color: #4b5563;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+    }
+
+    nav a:hover {
+      color: #166534;
+    }
+
+    h1 {
+      text-align: center;
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery-item img:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #064e3b;
+      color: white;
+      padding: 2rem 0;
+      text-align: center;
+      margin-top: 4rem;
+    }
+    .hero {
+            background: linear-gradient(to bottom, #166534, #15803d);
+            color: white;
+            padding: 5rem 0;
+        }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <img src="images/logo.png" alt="Muttom Oil Mills Logo" />
+        <span>Muttom Coconut Oil Mills</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+<section class="hero">
+    <div class="container">
+     <main class="container">
+    <h1>Our Gallery</h1>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="images/gallery1.png" alt="Gallery Image 1" /></div>
+      <div class="gallery-item"><img src="images/gallery2.png" alt="Gallery Image 2" /></div>
+      <div class="gallery-item"><img src="images/gallery3.png" alt="Gallery Image 3" /></div>
+      <div class="gallery-item"><img src="images/gallery4.png" alt="Gallery Image 4" /></div>
+      <div class="gallery-item"><img src="images/gallery5.png" alt="Gallery Image 5" /></div>
+      <div class="gallery-item"><img src="images/gallery6.webp" alt="Gallery Image 6" /></div>
+    </div>
+  </main>
+    </div>
+</section> 
+
+  <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Muttom Coconut Oil Mills</h3>
+                    <address>
+                        Karimpanakulam, Manimala, Kerala 686544,<br>
+                        India
+                    </address>
+                    <p>Phone: +91 9846444667</p>
+                    <p>Email: muttomcoconutoil@gmail.com</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Muttom Coconut Oil Mills. All rights reserved.</p>
+        </div>
+    </footer>  
+</body>
+</html>
