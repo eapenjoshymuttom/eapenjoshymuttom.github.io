@@ -3,114 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="images/logo.png">
     <title>About Us</title>
-    <link rel="icon" type="image/png" href="logo.png">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            min-height: 100vh;
+            background-color: #f9fafb;
+            position: relative;
+            z-index: 0;
+        }
+        
         .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        header {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
         .header-content {
-            background: #f4f4f4;
-            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
         }
         .logo {
-            color: #166534;
-            text-decoration: none;
             font-size: 1.5rem;
             font-weight: bold;
+            color: #166534;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
-        nav {
-            float: right;
+        .logo img {
+            height: 40px;
         }
         nav ul {
-            list-style-type: none;
-        }
-        nav li {
-            display: inline;
-            padding: 0 20px;
+            display: flex;
+            list-style: none;
         }
         nav a {
-            color: #333;
+            color: #4b5563;
             text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+        nav a:hover {
+            color: #166534;
+        }
+        .hero {
+            background: linear-gradient(to bottom, #166534, #15803d);
+            color: white;
+            padding: 5rem 0;
         }
         .section {
-            padding: 2rem 0;
+            padding: 4rem 0;
         }
         .about-content {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
+            gap: 2rem;
         }
         .about-text {
             flex: 1;
-            padding-right: 2rem;
         }
         .map-container {
             flex: 1;
             height: 400px;
         }
-        .footer-content {
-            
-            background: #064e3b;
-            color: #fff;
+        footer {
+            background-color: #064e3b;
+            color: white;
+            padding: 2rem 0;
             text-align: center;
-            padding: 1rem;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header-content">
-            <h1 id="muttom-oil-mills" class="logo">Muttom Oil Mills</h1>
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#tradition">Our Tradition</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Muttom Coconut Oil Mills Logo">
+                    <span>Muttom Coconut Oil Mills</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <div class="section about">
+    <section class="hero">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About Muttom Oil Mills</h2>
-                    <p>Nestled in the heart of Kerala, Muttom Oil Mills has been a cornerstone of quality coconut oil production for generations. Our journey began in the picturesque village of Karimpanakulam, where our family's passion for producing the purest coconut oil was born.</p>
+                    <h2>About Muttom Coconut Oil Mills</h2>
+                    <p>Nestled in the heart of Kerala, Muttom Coconut Oil Mills has been a cornerstone of quality coconut oil production for generations. Our journey began in the picturesque village of Karimpanakulam, where our family's passion for producing the purest coconut oil was born.</p>
                     <p>For decades, we have upheld the tradition of cold-pressing coconuts to extract oil of the highest quality. Our commitment to natural processes ensures that every drop of Muttom coconut oil retains its authentic flavor, aroma, and nutritional benefits.</p>
-                    <p>At Muttom Oil Mills, we believe in more than just producing oil; we're preserving a legacy. Our close ties with local farmers and our dedication to sustainable practices have made us an integral part of the community. We take pride in supporting local livelihoods while delivering a product that brings the essence of Kerala to homes across India and beyond.</p>
+                    <p>At Muttom Coconut Oil Mills, we believe in more than just producing oil; we're preserving a legacy. Our close ties with local farmers and our dedication to sustainable practices have made us an integral part of the community. We take pride in supporting local livelihoods while delivering a product that brings the essence of Kerala to homes across India and beyond.</p>
                     <p>Today, as we continue to grow, our core values remain unchanged. Every bottle of Muttom coconut oil is a testament to our family's dedication to quality, purity, and tradition. We invite you to experience the difference that generations of expertise can make in every drop of our oil.</p>
                 </div>
-                <div class="map-container" id="map">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15741.672776727826!2d76.7713718!3d9.472306!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06377da9780c1d%3A0x18d4eccba270eeeb!2sMuttom%20Oil%20Mills!5e0!3m2!1sen!2sin!4v1728915332356!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    
+                <div class="map-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15741.672776727826!2d76.7713718!3d9.472306!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06377da9780c1d%3A0x18d4eccba270eeeb!2sMuttom%20Oil%20Mills!5e0!3m2!1sen!2sin!4v1728915332356!5m2!1sen!2sin" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h3>Muttom Coconut Oil Mill</h3>
-                <p>Karimpanakulam, Manimala, Kerala 686544, India</p>
-                <p>Phone: +91 9846444667</p>
-                <p>Email: muttomcoconutoil@gmail.com</p>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Muttom Coconut Oil Mills</h3>
+                    <address>
+                        Karimpanakulam, Manimala, Kerala 686544,<br>
+                        India
+                    </address>
+                    <p>Phone: +91 9846444667</p>
+                    <p>Email: muttomcoconutoil@gmail.com</p>
+                </div>
             </div>
-            <p>&copy; 2024 Muttom Oil Mills. All rights reserved.</p>
+            <p class="copyright">&copy; 2024 Muttom Coconut Oil Mills. All rights reserved.</p>
         </div>
-    </div>
-
+    </footer>   
 </body>
 </html>
+
