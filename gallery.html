@@ -3,142 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Muttom Coconut Oil Mills – Pure coconut oil and traditional Kerala products, sustainably produced in Manimala, Kerala.">
   <link rel="icon" href="images/logo.png" type="image/png" />
-  <title>Gallery – Muttom Coconut Oil Mills</title>
+  <title>Gallery</title>
+
   <!-- 🔒 Content Protection -->
-    <style>
-        body {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-touch-callout: none;
-        -webkit-tap-highlight-color: transparent;  
-     }
-    </style>
-
-    <script>
-     document.addEventListener('contextmenu', function(e) {
-          e.preventDefault();
-        });
-
-        document.addEventListener('keydown', function(e) {
-        if (e.keyCode === 123) e.preventDefault(); // F12
-        if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) e.preventDefault(); // Ctrl+Shift+I/J/C
-        if (e.ctrlKey && e.keyCode === 85) e.preventDefault(); // Ctrl+U
-        if (e.ctrlKey && e.keyCode === 83) e.preventDefault(); // Ctrl+S
-        if (e.ctrlKey && e.keyCode === 82) e.preventDefault(); });
-    </script>
-        
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    body {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-tap-highlight-color: transparent;  
     }
+  </style>
+  <script>
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', e => {
+      if (e.keyCode === 123) e.preventDefault();
+      if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) e.preventDefault();
+      if (e.ctrlKey && [85, 83, 82].includes(e.keyCode)) e.preventDefault();
+    });
+  </script>
 
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       line-height: 1.5;
       color: #333;
-      min-height: 100vh;
-      position: relative;
-      z-index: 0;
       background-color: #f9fafb;
-     
     }
+    header { background-color: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1rem; }
+    .header-content { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; }
+    .logo { font-size: 1.5rem; font-weight: bold; color: #166534; text-decoration: none; display: flex; align-items: center; gap: 0.5rem; }
+    .logo img { height: 40px; }
+    nav ul { display: flex; list-style: none; }
+    nav a { color: #4b5563; text-decoration: none; padding: 0.5rem 1rem; }
+    nav a:hover { color: #166534; }
+    nav a.active { color: #15803d; font-weight: bold; }
+    h1 { text-align: center; color: white; font-size: 2.5rem; margin-bottom: 2rem; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+    .gallery-item { overflow: hidden; border-radius: 0.5rem; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+    .gallery-item img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease; cursor: pointer; }
+    .gallery-item img:hover { transform: scale(1.05); }
+    footer { background-color: #064e3b; color: white; padding: 2rem 0; text-align: center; margin-top: 4rem; }
+    .hero { background: linear-gradient(to bottom, #166534, #15803d); color: white; padding: 5rem 0; }
 
-    header {
-      background-color: white;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem 1rem;
-    }
-
-    .header-content {
-      display: flex;
-      justify-content: space-between;
+    /* Lightbox Styles */
+    .lightbox {
+      display: none;
+      position: fixed;
+      z-index: 99999;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9);
       align-items: center;
-      padding: 1rem 0;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.15s ease-in-out;
     }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #166534;
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+    .lightbox.show { display: flex; opacity: 1; }
+    .lightbox-content {
+      max-width: 90%; max-height: 85%;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255,255,255,0.3);
     }
-
-    .logo img {
-      height: 40px;
+    .lightbox .close {
+      position: absolute; top: 20px; right: 35px;
+      color: white; font-size: 40px; font-weight: bold;
+      cursor: pointer; transition: 0.3s;
     }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-    }
-
-    nav a {
-      color: #4b5563;
-      text-decoration: none;
-      padding: 0.5rem 1rem;
-    }
-
-    nav a:hover {
-      color: #166534;
-    }
-
-    h1 {
-      text-align: center;
-      color: white;
-      font-size: 2.5rem;
-      margin-bottom: 2rem;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .gallery-item {
-      overflow: hidden;
-      border-radius: 0.5rem;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background-color: #064e3b;
-      color: white;
-      padding: 2rem 0;
-      text-align: center;
-      margin-top: 4rem;
-    }
-    .hero {
-            background: linear-gradient(to bottom, #166534, #15803d);
-            color: white;
-            padding: 5rem 0;
-        }
+    .lightbox .close:hover { color: #bbb; }
   </style>
 </head>
+
 <body>
   <header>
     <div class="container header-content">
@@ -151,42 +92,132 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="products.html">Products</a></li>
+          <li><a href="gallery.html" class="active">Gallery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
-<section class="hero">
+
+  <section class="hero">
     <div class="container">
-     <main class="container">
-    <h1>Our Gallery</h1>
-    <div class="gallery-grid">
-      <div class="gallery-item"><img src="images/gallery1.png" alt="Gallery Image 1" /></div>
-      <div class="gallery-item"><img src="images/gallery2.png" alt="Gallery Image 2" /></div>
-      <div class="gallery-item"><img src="images/gallery3.png" alt="Gallery Image 3" /></div>
-      <div class="gallery-item"><img src="images/gallery4.png" alt="Gallery Image 4" /></div>
-      <div class="gallery-item"><img src="images/gallery5.png" alt="Gallery Image 5" /></div>
-      <div class="gallery-item"><img src="images/gallery6.webp" alt="Gallery Image 6" /></div>
+      <main class="container">
+        <h1>Our Gallery</h1>
+        <div class="gallery-grid">
+          <div class="gallery-item"><img src="images/gallery1.png" data-full="images/gallery1.png" alt="Gallery Image 1" /></div>
+          <div class="gallery-item"><img src="images/gallery2.png" data-full="images/gallery2.png" alt="Gallery Image 2" /></div>
+          <div class="gallery-item"><img src="images/gallery3.png" data-full="images/gallery3.png" alt="Gallery Image 3" /></div>
+          <div class="gallery-item"><img src="images/gallery4.png" data-full="images/gallery4.png" alt="Gallery Image 4" /></div>
+          <div class="gallery-item"><img src="images/gallery5.png" data-full="images/gallery5.png" alt="Gallery Image 5" /></div>
+          <div class="gallery-item"><img src="images/gallery6.webp" data-full="images/gallery6.webp" alt="Gallery Image 6" /></div>
+          <div class="gallery-item"><img src="images/gallery7.png" data-full="images/gallery7.png" alt="Gallery Image 7" /></div>
+          <div class="gallery-item"><img src="images/Frame 4.png" data-full="images/Frame 4.png" alt="Gallery Image 8" /></div>
+        </div>
+      </main>
     </div>
-  </main>
-    </div>
-</section> 
+  </section> 
 
   <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Muttom Coconut Oil Mills</h3>
-                    <address>
-                        Karimpanakulam, Manimala, Kerala 686544,<br>
-                        India
-                    </address>
-                    <p>Phone: +91 9846444667</p>
-                    <p>Email: muttomcoconutoil@gmail.com</p>
-                </div>
-            </div>
-            <p class="copyright">&copy; 2024 Muttom Coconut Oil Mills. All rights reserved.</p>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-info">
+          <h3>Muttom Coconut Oil Mills</h3>
+          <address>
+            Karimpanakulam, Manimala, Kerala 686544,<br> India
+          </address>
+          <p>Phone: +91 9846444667</p>
+          <p>Email: muttomcoconutoil@gmail.com</p>
         </div>
-    </footer>  
+      </div>
+      <p class="copyright">&copy; 2024 Muttom Coconut Oil Mills. All rights reserved.</p>
+    </div>
+  </footer>  
+
+  <!-- 🥥 Muttom Coconut Mascot Chatbot -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    #chat-button { position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px; cursor: pointer; z-index: 9999; }
+    #chat-window {
+      display: none; position: fixed; bottom: 110px; right: 20px;
+      width: 350px; height: 500px; border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3); background: #fff;
+      z-index: 10000; overflow: hidden;
+    }
+    #chat-header { background: #3d9970; color: white; padding: 15px; text-align: center; font-size: 18px; }
+    #chat-body { padding: 10px; height: 370px; overflow-y: auto; font-size: 14px; }
+    #chat-input { display: flex; border-top: 1px solid #ddd; }
+    #chat-input input { flex: 1; padding: 10px; border: none; font-size: 14px; }
+    #chat-input button { padding: 10px 15px; background: #3d9970; color: white; border: none; cursor: pointer; }
+    @media (max-width: 500px) {
+      #chat-window { width: 95%; right: 2.5%; height: 400px; }
+    }
+  </style>
+
+  <img id="chat-button" src="images/coconut-mascot.png" alt="Chat with Muttom" onclick="toggleChat()" />
+  <div id="chat-window">
+    <div id="chat-header">🥥 Ask Thenga_Kuttan</div>
+    <div id="chat-body"></div>
+    <div id="chat-input">
+      <input type="text" id="userInput" placeholder="Type your question...">
+      <button onclick="sendMessage()">Send</button>
+      <button onclick="clearChat()">Clear Chat</button>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <span class="close">&times;</span>
+    <img class="lightbox-content" id="lightbox-img" alt="Large View">
+  </div>
+
+  <!-- Chatbot JavaScript -->
+  <script src="script.js"></script>
+
+  <!-- Lightbox JavaScript -->
+  <script>
+    const lightbox = document.getElementById("lightbox");
+    const lightboxImg = document.getElementById("lightbox-img");
+    const closeBtn = document.querySelector(".lightbox .close");
+
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+      img.addEventListener("click", () => {
+        lightboxImg.src = img.dataset.full || img.src;
+        lightbox.classList.add("show");
+      });
+    });
+
+    closeBtn.addEventListener("click", () => {
+      lightbox.classList.remove("show");
+      setTimeout(() => lightbox.style.display = "none", 150);
+    });
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.remove("show");
+        setTimeout(() => lightbox.style.display = "none", 150);
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        lightbox.classList.remove("show");
+        setTimeout(() => lightbox.style.display = "none", 150);
+      }
+    });
+
+    // Preload full-size images
+    document.querySelectorAll(".gallery-item img").forEach(img => {
+      const pre = new Image();
+      pre.src = img.dataset.full || img.src;
+    });
+
+    // Ensure display:flex when showing
+    const observer = new MutationObserver(() => {
+      if (lightbox.classList.contains("show")) {
+        lightbox.style.display = "flex";
+      }
+    });
+    observer.observe(lightbox, { attributes: true });
+  </script>
 </body>
 </html>
