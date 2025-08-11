@@ -50,7 +50,32 @@
     .gallery-item img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.3s ease; cursor: pointer; }
     .gallery-item img:hover { transform: scale(1.05); }
     footer { background-color: #064e3b; color: white; padding: 2rem 0; text-align: center; margin-top: 4rem; }
-    .hero { background: linear-gradient(to bottom, #166534, #15803d); color: white; padding: 5rem 0; }
+
+    /* HERO with coconut overlay */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #166534, #15803d);
+      color: white;
+      padding: 5rem 0;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("images/colorless-hand-drawn-coconut-background.png");
+      background-repeat: repeat;
+      background-position: center top;
+      background-size: 220px;
+      opacity: 0.25;
+      pointer-events: none;
+      z-index: 0;
+      mix-blend-mode: screen;
+    }
+    .hero * {
+      position: relative;
+      z-index: 1;
+    }
 
     /* Lightbox Styles */
     .lightbox {
@@ -133,7 +158,7 @@
     </div>
   </footer>  
 
-  <!-- 🥥 Muttom Coconut Mascot Chatbot -->
+  <!-- 🥥 Chatbot -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     #chat-button { position: fixed; bottom: 20px; right: 20px; width: 80px; height: 80px; cursor: pointer; z-index: 9999; }
@@ -205,13 +230,11 @@
       }
     });
 
-    // Preload full-size images
     document.querySelectorAll(".gallery-item img").forEach(img => {
       const pre = new Image();
       pre.src = img.dataset.full || img.src;
     });
 
-    // Ensure display:flex when showing
     const observer = new MutationObserver(() => {
       if (lightbox.classList.contains("show")) {
         lightbox.style.display = "flex";

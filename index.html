@@ -95,12 +95,29 @@
         }
 
         .hero {
+            position: relative;
+            overflow: hidden;
             background: linear-gradient(to bottom, #166534, #15803d);
             color: white;
             padding: 5rem 0;
         }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("images/colorless-hand-drawn-coconut-background.png");
+            background-repeat: repeat;
+            background-position: center top;
+            background-size: 220px;
+            opacity: 0.25; /* Adjust to make pattern stronger/weaker */
+            pointer-events: none;
+            z-index: 0;
+            mix-blend-mode: screen; /* Makes black background disappear */
+        }
 
         .hero-content {
+            position: relative;
+            z-index: 1;
             display: flex;
             align-items: center;
             gap: 2rem;
