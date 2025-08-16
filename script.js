@@ -45,7 +45,8 @@ async function sendMessage() {
     chatBody.innerHTML += `<div><em>Thenga_Kuttan is typing...</em></div>`;
     chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
 
-    const response = await fetch("https://eapenjoshymuttom-github-io-1.onrender.com", {
+    const response = await fetch("https://eapenjoshymuttom-github-io-1.onrender.com/chat", {
+
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
