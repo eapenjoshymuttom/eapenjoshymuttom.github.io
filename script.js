@@ -46,13 +46,21 @@ async function sendMessage() {
     chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
 
     const response = await fetch("https://eapenjoshymuttom-github-io-1.onrender.com/chat", {
-
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         messages: [{ role: "user", content: userMessage }]
       })
     });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const contentType = response.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      throw new Error("Server returned non-JSON response");
+    }
 
     const data = await response.json();
     const botReply = data.choices?.[0]?.message?.content || "⚠️ No response";
@@ -65,12 +73,15 @@ async function sendMessage() {
       input.disabled = false;
       input.focus();
     }, 800);
+
   } catch (err) {
-    chatBody.innerHTML += `<div style="color:red;">❌ Error: ${err.message}</div>`;
+    chatBody.lastChild.remove(); // remove "typing"
+    chatBody.innerHTML += `<div style="color:red;">❌ Error: ${err.message}. Please try again later.</div>`;
     saveChatHistory();
     input.disabled = false;
   }
 }
+
 // Submit on Enter key
 document.addEventListener("DOMContentLoaded", () => {
   const input = document.getElementById("userInput");
@@ -82,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
-
 
 function toggleChat() {
   const chatWindow = document.getElementById("chat-window");
@@ -106,6 +116,7 @@ function saveChatHistory() {
   const chatBody = document.getElementById("chat-body");
   localStorage.setItem("chatHistory", chatBody.innerHTML);
 }
+
 function clearChat() {
   localStorage.removeItem("chatHistory");
   document.getElementById("chat-body").innerHTML = "";
