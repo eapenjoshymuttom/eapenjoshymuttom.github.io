@@ -60,3 +60,49 @@ body.no-scroll { overflow: hidden; }
   /* Contact map fix */
   .map-container { min-width: 100% !important; height: 300px; }
 }
+
+/* Chat Window */
+
+#chat-window {
+  display: none;
+  position: fixed;
+  bottom: 80px;   /* above your floating chat button */
+  right: 20px;
+  width: 90%;
+  max-width: 400px;
+  max-height: 70vh;   /* prevent it from covering whole screen */
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 9999;
+}
+
+#chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 10px;
+}
+
+#chat-input {
+  display: flex;
+  gap: 5px;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  background: #f9f9f9;
+}
+#chat-input input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+#chat-input button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  background: #166534;
+  color: white;
+}
