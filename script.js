@@ -1,3 +1,28 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const sendBtn = document.getElementById("sendBtn");
+  const clearBtn = document.getElementById("clearBtn");
+  const input = document.getElementById("userInput");
+
+  if (sendBtn) sendBtn.addEventListener("click", sendMessage);
+  if (clearBtn) clearBtn.addEventListener("click", clearChat);
+
+  if (input) {
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        sendMessage();
+      }
+    });
+
+    // Mobile fix
+    input.addEventListener("focus", () => {
+      document.getElementById("chat-window").style.bottom = "150px";
+    });
+    input.addEventListener("blur", () => {
+      document.getElementById("chat-window").style.bottom = "90px";
+    });
+  }
+});
 // Load chat history on page load
 window.addEventListener("DOMContentLoaded", () => {
   const chatBody = document.getElementById("chat-body");
