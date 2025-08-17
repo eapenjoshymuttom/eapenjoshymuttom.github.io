@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Muttom Coconut Oil Mills – Pure coconut oil and traditional Kerala products, sustainably produced in Manimala, Kerala.">
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <title> Home </title>
+    
+    <!-- 🔒 Content Protection -->
+    <style>
+        body {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+        -webkit-tap-highlight-color: transparent;  
+     }
+    </style>
+
+    <script>
+     document.addEventListener('contextmenu', function(e) {
+          e.preventDefault();
+        });
+
+        document.addEventListener('keydown', function(e) {
+        if (e.keyCode === 123) e.preventDefault(); // F12
+        if (e.ctrlKey && e.shiftKey && (e.keyCode === 73 || e.keyCode === 74 || e.keyCode === 67)) e.preventDefault(); // Ctrl+Shift+I/J/C
+        if (e.ctrlKey && e.keyCode === 85) e.preventDefault(); // Ctrl+U
+        if (e.ctrlKey && e.keyCode === 83) e.preventDefault(); // Ctrl+S
+        if (e.ctrlKey && e.keyCode === 82) e.preventDefault(); });
+    </script>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.5;
+            color: #333;
+            min-height: 100vh;
+            background-color: #f9fafb;
+            position: relative;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        header {
+            background-color: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #166534;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .logo img {
+            height: 40px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav a {
+            color: #4b5563;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        nav a:hover {
+            color: #166534;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #166534, #15803d);
+            color: white;
+            padding: 5rem 0;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url("images/colorless-hand-drawn-coconut-background.png");
+            background-repeat: repeat;
+            background-position: center top;
+            background-size: 220px;
+            opacity: 0.25; /* Adjust to make pattern stronger/weaker */
+            pointer-events: none;
+            z-index: 0;
+            mix-blend-mode: screen; /* Makes black background disappear */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .button-primary {
+            background-color: white;
+            color: #166534;
+        }
+
+        .button-secondary {
+            border: 2px solid white;
+            color: white;
+        }
+
+        .features {
+            padding: 4rem 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .feature-item {
+            text-align: center;
+        }
+
+        .feature-icon {
+            margin-bottom: 1rem;
+            color: #166534;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                flex-direction: column;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .product-info {
+            padding: 1rem;
+        }
+
+        footer {
+            background-color: #064e3b;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        nav a.active {
+        color: #15803d;
+        font-weight: bold;
+        }
+
+    </style>
+    
+    <!-- Mobile Menu & Responsive Styles -->
+    <link rel="stylesheet" href="mobile.css">
+    <script src="mobile-menu.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="Muttom Coconut Oil Mills Logo">
+                    <span>Muttom Coconut Oil Mills</span>
+                </a>
+                <nav>
+                    <ul>
+                        <li><a href="index.html" class="active">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2>Pure Tradition in Every Drop</h2>
+                    <p style="font-size: 1.25rem; margin-bottom: 2rem;">From our family to yours - 100% natural coconut oil</p>
+                    <div>
+                        <a href="products.html" class="button button-primary">Shop Now</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <video autoplay loop muted src="video/rose ad.mp4" style="width: 100%; height: auto; border-radius: 0.5rem;"></video>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="feature-icon" data-lucide="heart"></i>
+                    <h3>Family Tradition</h3>
+                    <p>Passing down quality through generations</p>
+                </div>
+                <div class="feature-item">
+                    <i class="feature-icon" data-lucide="leaf"></i>
+                    <h3>100% Natural</h3>
+                    <p>Pure coconut oil with no additives</p>
+                </div>
+                <div class="feature-item">
+                    <i class="feature-icon" data-lucide="users"></i>
+                    <h3>Community First</h3>
+                    <p>Supporting local farmers and families</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Muttom Coconut Oil Mills</h3>
+                    <address>
+                        Karimpanakulam, Manimala, Kerala 686544,<br>
+                        India
+                    </address>
+                    <p>Phone: +91 9846444667</p>
+                    <p>Email: muttomcoconutoil@gmail.com</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; 2024 Muttom Coconut Oil Mills. All rights reserved.</p>
+        </div>
+    </footer> 
+    <!-- 🥥 Muttom Coconut Mascot Chatbot -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  #chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    z-index: 9999;
+  }
+
+  #chat-window {
+    display: none;
+    position: fixed;
+    bottom: 110px;
+    right: 20px;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    background: #fff;
+    z-index: 10000;
+    overflow: hidden;
+  }
+
+  #chat-header {
+    background: #3d9970;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+  }
+
+  #chat-body {
+    padding: 10px;
+    height: 370px;
+    overflow-y: auto;
+    font-size: 14px;
+  }
+
+  #chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+  }
+
+  #chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    font-size: 14px;
+  }
+
+  #chat-input button {
+    padding: 10px 15px;
+    background: #3d9970;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  @media (max-width: 500px) {
+  #chat-window {
+    width: 95%;
+    right: 2.5%;
+    height: 400px;
+  }
+  }
+
+</style>
+
+<img id="chat-button" src="images/coconut-mascot.png" alt="Chat with Muttom" onclick="toggleChat()" />
+
+<div id="chat-window">
+  <div id="chat-header">🥥 Ask Thenga_Kuttan</div>
+  <div id="chat-body"></div>
+  <div id="chat-input">
+    <input type="text" id="userInput" placeholder="Type your question..." />
+    <button id="sendBtn">Send</button>
+    <button id="clearBtn">Clear</button>
+  </div>
+</div>
+
+
+<!-- Chatbot JavaScript -->
+ <script src="script.js"></script>
+  
+</body>
+</html>
