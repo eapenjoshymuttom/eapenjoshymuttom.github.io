@@ -135,7 +135,7 @@ function clearChat() {
   document.getElementById("chat-body").innerHTML = "";
 }
 
-// Close chatbot if user clicks outside of it
+// Close chatbot if user clicks outside
 document.addEventListener("click", function (event) {
   const chatWindow = document.getElementById("chat-window");
   const chatButton = document.getElementById("chat-button");
