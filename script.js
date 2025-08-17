@@ -7,31 +7,6 @@ window.addEventListener("DOMContentLoaded", () => {
     chatBody.innerHTML = history;
     chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
   }
-
-  // Buttons for mobile
-  const sendBtn = document.getElementById("sendBtn");
-  const clearBtn = document.getElementById("clearBtn");
-  if (sendBtn) sendBtn.addEventListener("click", sendMessage);
-  if (clearBtn) clearBtn.addEventListener("click", clearChat);
-
-  // Enter key support
-  const input = document.getElementById("userInput");
-  if (input) {
-    input.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault(); // Prevent newline
-        sendMessage();
-      }
-    });
-
-    // Fix for mobile keyboard
-    input.addEventListener("focus", () => {
-      document.getElementById("chat-window").style.bottom = "150px";
-    });
-    input.addEventListener("blur", () => {
-      document.getElementById("chat-window").style.bottom = "90px";
-    });
-  }
 });
 
 async function sendMessage() {
@@ -95,30 +70,42 @@ async function sendMessage() {
       chatBody.innerHTML += `<div><strong>Thenga_Kuttan:</strong> ${botReply}</div>`;
       saveChatHistory();
       chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: "smooth" });
+      input.disabled = false;
+      input.focus();
     }, 800);
 
   } catch (err) {
     chatBody.lastChild.remove(); // remove "typing"
     chatBody.innerHTML += `<div style="color:red;">❌ Error: ${err.message}. Please try again later.</div>`;
     saveChatHistory();
-  } finally {
-    // ✅ Always re-enable input
     input.disabled = false;
-    input.focus();
   }
 }
+
+// Submit on Enter key
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.getElementById("userInput");
+
+  input.addEventListener("keydown", function (e) {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault(); // Prevent newline
+      sendMessage();
+    }
+  });
+});
 
 function toggleChat() {
   const chatWindow = document.getElementById("chat-window");
   const chatBody = document.getElementById("chat-body");
   const wasHidden = chatWindow.style.display === "none";
-  chatWindow.style.display = wasHidden ? "flex" : "none";
+  chatWindow.style.display = wasHidden ? "block" : "none";
 
   if (wasHidden && chatBody.innerHTML.trim() === "") {
     chatBody.innerHTML = `
       <div><strong>Thenga_Kuttan:</strong> 🙏 സ്വാഗതം!
         ഞാൻ മുട്ടം കൊക്കനട്ട് ഓയിൽ മിൽ-ന്റെ AI അസിസ്റ്റന്റാണ്.
-        ഉൽപ്പന്നങ്ങൾ, വില, അല്ലെങ്കിൽ ഓർഡറുകൾക്കായി ദയവായി ചോദിക്കുക..</div>
+        ഞങ്ങളുടെ ഉൽപ്പന്നങ്ങൾ, വില, ഉപയോഗം, അല്ലെങ്കിൽ എങ്ങനെ ഓർഡർ ചെയ്യാം എന്നതു സംബന്ധിച്ച് നിങ്ങൾക്ക് അറിയേണ്ടതുണ്ടോ?
+        ദയവായി ചോദിക്കുക..</div>
     `;
     saveChatHistory();
   }
@@ -135,13 +122,13 @@ function clearChat() {
   document.getElementById("chat-body").innerHTML = "";
 }
 
-// Close chatbot if user clicks outside
+// Close chatbot if user clicks outside of it
 document.addEventListener("click", function (event) {
   const chatWindow = document.getElementById("chat-window");
   const chatButton = document.getElementById("chat-button");
 
   if (
-    chatWindow.style.display !== "none" &&
+    chatWindow.style.display === "block" &&
     !chatWindow.contains(event.target) &&
     !chatButton.contains(event.target)
   ) {
